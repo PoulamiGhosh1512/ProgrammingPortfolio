@@ -26,6 +26,7 @@ def minDistance(Px,Py):
       Ry.append(p)
 
   delta = min(minDistance(Qx, Qy), minDistance(Rx, Ry))
+  
   Sy = []
   for p in Py:
     if abs(p[0]-xR) <= delta:
