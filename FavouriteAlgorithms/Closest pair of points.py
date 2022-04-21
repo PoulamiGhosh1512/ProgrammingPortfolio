@@ -5,6 +5,7 @@ def distance(p, q):
   return math.sqrt(math.pow(p[0] - q[0],2) + math.pow(p[1] - q[1],2))
 
 def minDistance(Px,Py):
+  '''Px and Py contain the same set of points sorted by x and y coordinates respectively'''
   s = len(Px)
   #Base case is when Px has 2 or 3 points.
   if (s == 2):
@@ -26,7 +27,8 @@ def minDistance(Px,Py):
       Ry.append(p)
 
   delta = min(minDistance(Qx, Qy), minDistance(Rx, Ry))
-  
+
+  #Constructing Sy with all points within the delta band lying on either sides of the separator
   Sy = []
   for p in Py:
     if abs(p[0]-xR) <= delta:
